@@ -1,8 +1,13 @@
 // import '../styles/globals.css'
-import '../styles/style.scss'
+import StateWrapper from "../context/StateWrapper";
+import "../styles/style.scss";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <StateWrapper>
+      <Component {...pageProps} />
+    </StateWrapper>
+  );
 }
 
-export default MyApp
+export default MyApp;

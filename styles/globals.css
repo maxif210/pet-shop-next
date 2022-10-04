@@ -266,7 +266,7 @@ section {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  background: url(../public/image/home_bg_img.jpg) no-repeat;
+  background: url(../public/image/home_bg_img.webp) no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -331,8 +331,8 @@ section {
 
 .about .content {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 40rem;
-          flex: 1 1 40rem;
+      -ms-flex: 1 1 0rem;
+          flex: 1 1 0rem;
 }
 
 .about .content h3 {
@@ -685,8 +685,7 @@ section {
 }
 
 .footer {
-  position: relative;
-  background: url(../public/image/footer_background.jpg) no-repeat;
+ 
   background-position: center;
   background-size: center;
   padding-top: 10rem;
