@@ -25,7 +25,7 @@ export default function ShoppingCart() {
     >
       
       <button className="close" onClick={handleCloseCart}>
-        Close
+      ×
       </button>
 
       {cart.items.length === 0 ? (
