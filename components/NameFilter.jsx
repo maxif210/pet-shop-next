@@ -22,20 +22,43 @@ const NameFilter = ({products, onChange}) => {
     setSelected(draft) 
     }
     
-   
+   const marcasAcomodadas = marcas.sort((a, b) => {
+    if (a == b) {
+      return 0;
+    }
+    if (a < b) {
+      return -1;
+    }
+    return 1;
+  });
    
   return (
       <div>
-        <h2> Seleccione una Marca</h2>
         <div className='nameFilterContainer'>
-        <ul>
-        {marcas.map((marca)=>(
+        <div className="row">
+        <div className="col">
+      
+      <div className="tabs">
+        <div className="tab">
+          <input type="checkbox" id="chck2" />
+          <label className="tab-label" htmlFor="chck2">
+           Selecciona una marca
+          </label>
+          <div className="tab-content">
+          <ul>
+        {marcasAcomodadas.map((marca)=>(
             <li key={marca}>
                 <input onChange={(e)=> handleChange(marca, e.target.checked)} type="checkbox" name='marca' value={marca.trim()} />
                 <label>{marca.trim()}</label>
             </li>
         ) )}
     </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
     </div>
       </div>
   )

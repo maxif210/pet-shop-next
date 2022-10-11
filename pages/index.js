@@ -1,4 +1,4 @@
-import {  useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { About } from "../components/About";
 import Consejos from "../components/Consejos";
 import { Contact } from "../components/Contact";
@@ -110,9 +110,13 @@ export default function Home({ products, consejos }) {
             />
           </div>
           <div className="box-container">
-            {matches.map((product) => (
-              <Product key={product.id} product={product} showAs="card" />
-            ))}
+            {matches.length > 0 ? (
+              matches.map((product) => (
+                <Product key={product.id} product={product} showAs="card" />
+              ))
+            ) : (
+              <h2 className="noResult">No hay resultados</h2>
+            )}
           </div>
         </div>
       </section>

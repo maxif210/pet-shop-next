@@ -22,16 +22,16 @@ const FilterPrice = ({ onChange}) => {
    
   return (
       <div>
-       <h2>Seleccione un rango de precios</h2>
        <div className='categoryContainer'>
+       <h2 className="tab-label">Seleccione un rango de precios</h2>
        <div className='categoryItem'>
-       <label className='labelPrice'>Minimo: </label>
-       <input type="number" value={min} onChange={(e)=>handleChangeMin(Number(e.target.value))} />
+       <label className='labelPrice'>Minimo:</label>
+       <input className='priceBackground' type="number" value={min} onChange={(e)=>handleChangeMin(Number(e.target.value))} />
         
        </div>
        <div className='categoryItem'>
         <label className='labelPrice'>Maximo: </label>
-       <input type="number" value={max} onChange={(e)=>handleChangeMax(Number(e.target.value))} />
+       <input className='priceBackground' type="number" value={max} onChange={(e)=>handleChangeMax(Number(e.target.value))} />
         
         </div>
         
