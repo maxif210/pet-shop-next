@@ -389,7 +389,7 @@ section{
   gap: 1.5rem;
 }
 .shop .box-container{
-  @include grid(30rem);
+  @include grid(26rem);
   flex: 1;
   .box{
     width: 300px;
@@ -1099,4 +1099,34 @@ input:checked {
     max-height: 100vh;
     padding: 1em;
   }
+}
+
+
+
+.pagination{
+  display: flex;
+  place-content: center;
+  width: 100%;
+  
+  font-size: x-large;
+  margin-top: 3rem;
+}
+
+
+
+.item-pagination{
+  list-style: none;
+  margin-right: 1rem;
+  border: 1px solid $midnight;
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+
+.item-pagination:hover{
+  background-color: rgb(226, 226, 226);
+}
+
+.pagination-number{
+  color: #000;
+  cursor: pointer;
 }

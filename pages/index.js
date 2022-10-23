@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { About } from "../components/About";
 import Consejos from "../components/Consejos";
 import { Contact } from "../components/Contact";
@@ -12,6 +12,8 @@ import { HeadMeta } from "../components/HeadMeta";
 import { Hero } from "../components/Hero";
 import NameFilter from "../components/NameFilter";
 import Ofertas from "../components/Ofertas";
+import Pagination from "../components/Pagination";
+
 
 import { Product } from "../components/Product";
 
@@ -20,6 +22,12 @@ import apiConsejo from "../consejos/apiConsejo";
 import api from "../product/api";
 
 export default function Home({ products, consejos }) {
+  
+  const [currentPage, setCurrentPage] = useState(1)
+  const [matchesPerPage ] = useState(9)
+  
+  
+
   const [filters, setFilters] = useState({
     marca: null,
     kg: null,
@@ -27,15 +35,20 @@ export default function Home({ products, consejos }) {
     categoria: null,
     price: null,
   });
-  const matches = useMemo(() => {
-    const filteresToApply = Object.values(filters).filter(Boolean);
+  
 
-    let matches = products;
-    for (let filter of filteresToApply) {
-      matches = matches.filter(filter);
-    }
-    return matches;
-  }, [products, filters]);
+    const matches = useMemo(() => {
+      const filteresToApply = Object.values(filters).filter(Boolean);
+  
+      let matches = products;
+      for (let filter of filteresToApply) {
+        matches = matches.filter(filter);
+      }
+      return matches;
+    }, [products, filters]);
+  
+
+
 
   if (typeof window !== "undefined") {
     let navbar = document.querySelector(".header .navbar");
@@ -62,6 +75,14 @@ export default function Home({ products, consejos }) {
       }
     };
   }
+  const indexOfLastPost = currentPage * matchesPerPage;
+  const indexOfFirstPost = indexOfLastPost - matchesPerPage;
+  const currentMatches = matches.slice(indexOfFirstPost, indexOfLastPost)
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+ 
+  
+  
 
   return (
     <>
@@ -109,16 +130,20 @@ export default function Home({ products, consejos }) {
               products={products}
             />
           </div>
-          <div className="box-container">
-            {matches.length > 0 ? (
-              matches.map((product) => (
-                <Product key={product.id} product={product} showAs="card" />
-              ))
-            ) : (
-              <h2 className="noResult">No hay resultados</h2>
-            )}
-          </div>
+
+            
+            <div className="box-container">
+              {matches.length > 0 ? (
+                currentMatches.map((product) => (
+                  <Product key={product.id} product={product} showAs="card" />
+                  ))
+                  ) : (
+                    <h2 className="noResult">No hay resultados</h2>
+                    )}
+            </div>
+            
         </div>
+            <Pagination matchesPerPage={matchesPerPage} totalMatch={matches.length} paginate={paginate}/>
       </section>
 
       <Ofertas products={products} />
