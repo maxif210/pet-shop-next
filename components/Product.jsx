@@ -20,7 +20,7 @@ export const Product = ({ product, showAs, qty }) => {
         </div>
         <div className="content">  
           <h4>Bolsa de: {product.kg}Kg</h4>
-          <div className="amount"> {parseCurrency(product.price)}</div>
+          {/* <div className="amount"> {parseCurrency(product.price)}</div> */}
           <ProductButton item={product} />
         </div>
       </div>

@@ -42,7 +42,7 @@ const NameFilter = ({products, onChange}) => {
         <div className="tab">
           <input type="checkbox" id="chck2" />
           <label className="tab-label" htmlFor="chck2">
-           Selecciona una marca
+           Buscar por marca
           </label>
           <div className="tab-content">
           <ul>

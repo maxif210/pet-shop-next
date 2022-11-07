@@ -15,18 +15,19 @@ const FilterCategoria = ({ onChange }) => {
   }
 
   return (
-    <div>
-        <div className="categoryContainer">
+    <div className="tipoContainer">
+       
         <h2 className="tab-label">
-           Selecciona por Kilo
+           Como es tu mascota
         </h2>
-        <div className="categoryItem">
+       <div className="categoryFlex">
+       <div className="categoryItem">
           <input
             type="checkbox"
             value="perro"
             onChange={(e) => handleChange(e.target.value, e.target.checked)}
           />
-          <img width="80" height="80" src="image/perro.webp" alt="perro" />
+          <img width="90" height="90" src="image/categoria1.png" alt="perro" />
         </div>
         <div className="categoryItem">
           <input
@@ -34,10 +35,29 @@ const FilterCategoria = ({ onChange }) => {
             value="gato"
             onChange={(e) => handleChange(e.target.value, e.target.checked)}
           />
-          <img width="80" height="80" src="image/gato.webp" alt="gato" />
+          <img width="90" height="90" src="image/6.png" alt="gato" />
         </div>
+        
+          <div className="categoryItem">
+          <input
+            type="checkbox"
+            value="peces"
+            onChange={(e) => handleChange(e.target.value, e.target.checked)}
+          />
+          <img width="90" height="90" src="image/pez2.png" alt="gato" />
+        </div>
+        <div className="categoryItem">
+          <input
+            type="checkbox"
+            value="roedores"
+            onChange={(e) => handleChange(e.target.value, e.target.checked)}
+          />
+          <img width="90" height="90" src="image/hamster1.png" alt="gato" />
+        </div>
+        
+       </div>
       </div>
-    </div>
+    
    
   );
 };

@@ -8,17 +8,13 @@ const CheckoutButton = ({ cart }) => {
         .reduce(
           (message, product) =>
             message.concat(
-              `* ${product.marca} - ${parseCurrency(product.price)} - ${
+              ` ${product.marca} - ${product.kg}Kg - Cantidad:${
                 product.qty
-              }\n`
+              },\n`
             ),
-          ``
+          `Hola, me gustaria pedir: `
         )
-        .concat(
-          `\nTotal: ${parseCurrency(
-            cart.items.reduce((total, product) => total + product.price, 0)
-          )}`
-        ),
+        ,
     [cart]
   );
   return (

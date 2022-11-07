@@ -43,7 +43,7 @@ const Filterkg = ({ products, onChange }) => {
         <div className="tab">
           <input type="checkbox" id="chck1" />
           <label className="tab-label" htmlFor="chck1">
-           Selecciona por Kilo
+           buscar por Kilo
           </label>
           <div className="tab-content">
           <ul>

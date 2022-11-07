@@ -14,7 +14,6 @@ import NameFilter from "../components/NameFilter";
 import Ofertas from "../components/Ofertas";
 import Pagination from "../components/Pagination";
 
-
 import { Product } from "../components/Product";
 
 import apiConsejo from "../consejos/apiConsejo";
@@ -22,11 +21,8 @@ import apiConsejo from "../consejos/apiConsejo";
 import api from "../product/api";
 
 export default function Home({ products, consejos }) {
-  
-  const [currentPage, setCurrentPage] = useState(1)
-  const [matchesPerPage ] = useState(9)
-  
-  
+  const [currentPage, setCurrentPage] = useState(1);
+  const [matchesPerPage] = useState(9);
 
   const [filters, setFilters] = useState({
     marca: null,
@@ -35,20 +31,16 @@ export default function Home({ products, consejos }) {
     categoria: null,
     price: null,
   });
-  
 
-    const matches = useMemo(() => {
-      const filteresToApply = Object.values(filters).filter(Boolean);
-  
-      let matches = products;
-      for (let filter of filteresToApply) {
-        matches = matches.filter(filter);
-      }
-      return matches;
-    }, [products, filters]);
-  
+  const matches = useMemo(() => {
+    const filteresToApply = Object.values(filters).filter(Boolean);
 
-
+    let matches = products;
+    for (let filter of filteresToApply) {
+      matches = matches.filter(filter);
+    }
+    return matches;
+  }, [products, filters]);
 
   if (typeof window !== "undefined") {
     let navbar = document.querySelector(".header .navbar");
@@ -77,12 +69,8 @@ export default function Home({ products, consejos }) {
   }
   const indexOfLastPost = currentPage * matchesPerPage;
   const indexOfFirstPost = indexOfLastPost - matchesPerPage;
-  const currentMatches = matches.slice(indexOfFirstPost, indexOfLastPost)
-  const paginate = pageNumber => setCurrentPage(pageNumber);
-
- 
-  
-  
+  const currentMatches = matches.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -101,49 +89,60 @@ export default function Home({ products, consejos }) {
       <section className="shop" id="shop">
         <div className="shopcontainer">
           <div className="selectContainer">
-            <FilterCategoria
-              onChange={(filter) =>
-                setFilters((filters) => ({ ...filters, categoria: filter }))
-              }
-            />
-            <FilterPrice
-              onChange={(filter) =>
-                setFilters((filters) => ({ ...filters, price: filter }))
-              }
-            />
-            <FilterEdad
-              onChange={(filter) =>
-                setFilters((filters) => ({ ...filters, edad: filter }))
-              }
-            />
+            <div className="tabsContainer">
+              <FilterCategoria
+                onChange={(filter) =>
+                  setFilters((filters) => ({ ...filters, categoria: filter }))
+                }
+              />
+              <div>
+              <NameFilter
+                onChange={(filter) =>
+                  setFilters((filters) => ({ ...filters, marca: filter }))
+                }
+                products={products}
+              />
+              <Filterkg
+                onChange={(filter) =>
+                  setFilters((filters) => ({ ...filters, marca: filter }))
+                }
+                products={products}
+              />
+              <FilterEdad
+                  onChange={(filter) =>
+                    setFilters((filters) => ({ ...filters, edad: filter }))
+                  }
+                />
+                  <FilterPrice
+                  onChange={(filter) =>
+                    setFilters((filters) => ({ ...filters, price: filter }))
+                  }
+                />
+                
+              </div>
+            </div>
 
-            <Filterkg
-              onChange={(filter) =>
-                setFilters((filters) => ({ ...filters, marca: filter }))
-              }
-              products={products}
-            />
-            <NameFilter
-              onChange={(filter) =>
-                setFilters((filters) => ({ ...filters, marca: filter }))
-              }
-              products={products}
-            />
+            <div className="tabsContainer2">
+           
+              
+            </div>
           </div>
 
-            
-            <div className="box-container">
-              {matches.length > 0 ? (
-                currentMatches.map((product) => (
-                  <Product key={product.id} product={product} showAs="card" />
-                  ))
-                  ) : (
-                    <h2 className="noResult">No hay resultados</h2>
-                    )}
-            </div>
-            
+          <div className="box-container">
+            {matches.length > 0 ? (
+              currentMatches.map((product) => (
+                <Product key={product.id} product={product} showAs="card" />
+              ))
+            ) : (
+              <h2 className="noResult">No hay resultados</h2>
+            )}
+          </div>
         </div>
-            <Pagination matchesPerPage={matchesPerPage} totalMatch={matches.length} paginate={paginate}/>
+        <Pagination
+          matchesPerPage={matchesPerPage}
+          totalMatch={matches.length}
+          paginate={paginate}
+        />
       </section>
 
       <Ofertas products={products} />

@@ -23,7 +23,7 @@ const FilterPrice = ({ onChange}) => {
   return (
       <div>
        <div className='categoryContainer'>
-       <h2 className="tab-label">Seleccione un rango de precios</h2>
+       <h2 className="tab-label">Rango de precios</h2>
        <div className='categoryItem'>
        <label className='labelPrice'>Minimo:</label>
        <input className='priceBackground' type="number" value={min} onChange={(e)=>handleChangeMin(Number(e.target.value))} />

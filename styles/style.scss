@@ -128,7 +128,7 @@ section{
   background: $white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding:2rem 9%;
   box-shadow: $box-shadow;
   position: fixed;
@@ -392,7 +392,7 @@ section{
   @include grid(26rem);
   flex: 1;
   .box{
-    width: 300px;
+    width: 100%;
     position: relative;
     overflow: hidden;
     height: 560px;
@@ -480,6 +480,8 @@ section{
 
 .selectContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 6rem;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -487,6 +489,7 @@ section{
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   padding: 1.5rem;
   height: min-content;
+  width: min-content;
 }
 
 .selectContainer button {
@@ -501,12 +504,34 @@ section{
   width: 25%;
   padding: 1rem;
 }
+.categoryFlex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tipoContainer{
+ 
+  display: flex;
+  width: 45%;
+  height: min-content;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;  
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+  h2{
+    color: #fff;
+    font-size: medium;
+    border-radius: 8px;
+  }
+}
 .categoryContainer{
   display: flex;
+  
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
   border-radius: 5px;
+  
   box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
 
   h2{
@@ -514,13 +539,13 @@ section{
     font-size: medium;
     border-radius: 8px;
   }
-
+  
 }
 .categoryItem{
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  
+  width: min-content;
 }
 .filterHeading{
   font-size: large;
@@ -542,12 +567,24 @@ section{
 
 .categoryItem img {
   border-radius: 100%;
+ 
+}
+
+.tabsContainer{
+  display: flex;
+  gap: 1rem;
+}
+
+.tabsContainer2{
+  display: flex;
+  justify-content: space-between;
 }
 
 .nameFilterContainer{
   display: flex;
   gap: 1rem;  
   padding: 1rem;
+  width: min-content
 }
 
 .nameFilterContainer ul {
@@ -1001,7 +1038,7 @@ section{
   }
   
   .header .login-form{
-    width:90%;
+    width:80%;
   }
 
   .shopcontainer{

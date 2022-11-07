@@ -23,7 +23,7 @@ const FilterEdad = ({ onChange}) => {
   return (
       <div>
        <div className='categoryContainer'>
-       <h2 className="tab-label">Seleccione una Edad</h2>
+       <h2 className="tab-label">buscar por edad </h2>
        <div className='categoryItem'>
        <input type="checkbox" value='Adulto' onChange={(e)=>handleChange(e.target.value, e.target.checked)} />
         <h3>Adulto</h3>

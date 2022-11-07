@@ -46,7 +46,7 @@ export default function ShoppingCart() {
                 />
               ))}
           </div>
-          <div className="total">Total: ${getTotal()} </div>
+          {/* <div className="total">Total: ${getTotal()} </div> */}
           <CheckoutButton cart={cart}/>
         </>
       )}
