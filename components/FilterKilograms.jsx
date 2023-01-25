@@ -36,15 +36,16 @@ const FilterKilograms = ({ products, onChange }) => {
       <div className="filterContainer">
         <div className="tabs">
           <div className="tab">
-            <input type="checkbox" id="chck1" />
+            <input className="check" type="checkbox" id="chck1" />
             <label className="tab-label categoryTitle" htmlFor="chck1">
               Buscar por Kg
             </label>
             <div className="tab-content">
-              <ul>
+              <ul className="ul">
                 {kilosAcomodados.map((kg) => (
                   <li key={kg}>
                     <input
+                      className="input"
                       onChange={(e) => handleChange(kg, e.target.checked)}
                       type="checkbox"
                       name="kilo"

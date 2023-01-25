@@ -1030,7 +1030,7 @@ $clouds: #ecf0f1;
 .tabs {
   overflow: hidden;
 
-  input {
+  .check {
     position: absolute;
     opacity: 0;
     z-index: -1;
@@ -1092,8 +1092,14 @@ input:checked {
     max-height: 100vh;
     padding: 1em;
   }
+  
 }
-
+.ul{
+  list-style: none;
+}
+.input{
+  margin-right: 10px;
+}
 .pagination {
   display: flex;
   place-content: center;

@@ -37,26 +37,19 @@ const FilterBrand = ({ products, onChange }) => {
       
             <div className="tabs">
               <div className="tab">
-                <input type="checkbox" id="chck2" />
+                <input className="check" type="checkbox" id="chck2" />
                 <label className="tab-label categoryTitle" htmlFor="chck2">
                   Buscar por marca
                 </label>
                 <div className="tab-content">
-                  <ul>
-                    {marcasAcomodadas.map((marca) => (
-                      <li key={marca}>
-                        <input
-                          onChange={(e) =>
-                            handleChange(marca, e.target.checked)
-                          }
-                          type="checkbox"
-                          name="marca"
-                          value={marca.trim()}
-                        />
-                        <label>{marca.trim()}</label>
-                      </li>
-                    ))}
-                  </ul>
+                  <ul className="ul">
+        {marcasAcomodadas.map((marca)=>(
+            <li key={marca}>
+                <input className="input" onChange={(e)=> handleChange(marca, e.target.checked)} type="checkbox" name='marca' value={marca.trim()} />
+                <label>{marca.trim()}</label>
+            </li>
+        ) )}
+    </ul>
                 </div>
              
           </div>
