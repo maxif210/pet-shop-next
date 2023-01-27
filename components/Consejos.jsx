@@ -10,7 +10,7 @@ const Consejos = ({consejos}) => {
       {" "}
       <span>Consejos</span>{" "} para tu Mascota
     </h1>
-    <div className="box-container">
+    <div className="products">
         {consejos.map((item)=>(
             <div key={item.id} className="box">
             <div className='imgBox'>
