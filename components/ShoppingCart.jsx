@@ -9,7 +9,7 @@ export default function ShoppingCart() {
   }
 
   function getTotal() {
-    console.log(cart)
+    console.log(cart);
     const total = cart.items.reduce(
       (acc, item) => acc + item.qty * item.price,
       0
@@ -23,10 +23,24 @@ export default function ShoppingCart() {
       className="shoppingCart"
       style={{ display: cart.isOpen ? "block" : "none" }}
     >
-      
-      <button className="close" onClick={handleCloseCart}>
-      ×
-      </button>
+      <div className="closeContainer">
+        <button className="close" onClick={handleCloseCart}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="#000"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </button>
+      </div>
 
       {cart.items.length === 0 ? (
         <div className="empty">Cart is empty</div>
@@ -37,7 +51,6 @@ export default function ShoppingCart() {
             {cart.items &&
               cart.items.length > 0 &&
               cart.items.map((item, i) => (
-                
                 <Product
                   key={item + i.toString()}
                   product={item}
@@ -47,7 +60,7 @@ export default function ShoppingCart() {
               ))}
           </div>
           {/* <div className="total">Total: ${getTotal()} </div> */}
-          <CheckoutButton cart={cart}/>
+          <CheckoutButton cart={cart} />
         </>
       )}
     </div>

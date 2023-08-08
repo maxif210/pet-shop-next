@@ -2,15 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 import { About } from "../components/About";
 import Consejos from "../components/Consejos";
 import { Contact } from "../components/Contact";
-import FilterCategoria from "../components/FilterCategoria";
-import FilterEdad from "../components/FilterEdad";
-import Filterkg from "../components/FilterKg";
+import FilterCategory from "../components/FilterCategory";
+import FilterAge from "../components/FilterAge";
+import FilterKilograms from "../components/FilterKilograms";
 import FilterPrice from "../components/FilterPrice";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { HeadMeta } from "../components/HeadMeta";
 import { Hero } from "../components/Hero";
-import NameFilter from "../components/NameFilter";
+import FilterBrand from "../components/FilterBrand";
 import Ofertas from "../components/Ofertas";
 import Pagination from "../components/Pagination";
 
@@ -82,67 +82,61 @@ export default function Home({ products, consejos }) {
 
       <About />
 
-      <h1 className="heading">
+      <h2 className="heading">
         {" "}
         Nuestra <span> Tienda </span>{" "}
-      </h1>
+      </h2>
       <section className="shop" id="shop">
-        <div className="shopcontainer">
-          <div className="selectContainer">
-            <div className="tabsContainer">
-              <FilterCategoria
-                onChange={(filter) =>
-                  setFilters((filters) => ({ ...filters, categoria: filter }))
-                }
-              />
-              <div>
-              <NameFilter
+        <div className="shopContainer">
+          <div className="filtersContainer">
+            <FilterCategory
+              onChange={(filter) =>
+                setFilters((filters) => ({ ...filters, categoria: filter }))
+              }
+            />
+            <FilterAge
+              onChange={(filter) =>
+                setFilters((filters) => ({ ...filters, edad: filter }))
+              }
+            />
+            <FilterPrice
+              onChange={(filter) =>
+                setFilters((filters) => ({ ...filters, price: filter }))
+              }
+            />
+            <div>
+              <FilterBrand
                 onChange={(filter) =>
                   setFilters((filters) => ({ ...filters, marca: filter }))
                 }
                 products={products}
               />
-              <Filterkg
+              <FilterKilograms
                 onChange={(filter) =>
                   setFilters((filters) => ({ ...filters, marca: filter }))
                 }
                 products={products}
               />
-              <FilterEdad
-                  onChange={(filter) =>
-                    setFilters((filters) => ({ ...filters, edad: filter }))
-                  }
-                />
-                  <FilterPrice
-                  onChange={(filter) =>
-                    setFilters((filters) => ({ ...filters, price: filter }))
-                  }
-                />
-                
-              </div>
-            </div>
-
-            <div className="tabsContainer2">
-           
-              
             </div>
           </div>
 
-          <div className="box-container">
-            {matches.length > 0 ? (
-              currentMatches.map((product) => (
-                <Product key={product.id} product={product} showAs="card" />
-              ))
-            ) : (
-              <h2 className="noResult">No hay resultados</h2>
-            )}
+          <div className="prueba">
+            <div className="products">
+              {matches.length > 0 ? (
+                currentMatches.map((product) => (
+                  <Product key={product.id} product={product} showAs="card" />
+                ))
+              ) : (
+                <h2 className="noResult">No hay resultados</h2>
+              )}
+            </div>
+            <Pagination
+              matchesPerPage={matchesPerPage}
+              totalMatch={matches.length}
+              paginate={paginate}
+            />
           </div>
         </div>
-        <Pagination
-          matchesPerPage={matchesPerPage}
-          totalMatch={matches.length}
-          paginate={paginate}
-        />
       </section>
 
       <Ofertas products={products} />
