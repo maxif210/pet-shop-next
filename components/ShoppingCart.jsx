@@ -1,5 +1,6 @@
 import { useAppContext } from "../context/StateWrapper";
 import CheckoutButton from "./CheckoutButton";
+import MpCheckoutButton from "./MpCheckoutButton";
 import { Product } from "./Product";
 export default function ShoppingCart() {
   const cart = useAppContext();
@@ -61,6 +62,7 @@ export default function ShoppingCart() {
           </div>
           {/* <div className="total">Total: ${getTotal()} </div> */}
           <CheckoutButton cart={cart} />
+          {/* <MpCheckoutButton cart={cart}/> */}
         </>
       )}
     </div>

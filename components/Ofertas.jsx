@@ -16,7 +16,10 @@ const Ofertas = ({ products }) => {
         ))}
       </div>
       <div className="button-container">
-        <a href={`https://wa.me/3516890981`} className="btn">
+        <a
+          href={`https://wa.me/3516890981?text=Hola, me gustaria consultar las ofertas`}
+          className="btn"
+        >
           Consulta por Stock
         </a>
       </div>

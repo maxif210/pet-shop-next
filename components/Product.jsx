@@ -7,7 +7,7 @@ export const Product = ({ product, showAs, qty }) => {
     return (
       <div className="box" key={product.id}>
         <h3>{product.marca}</h3>
-        
+
         <div className="image">
           <img src={product.image} alt={product.title} />
         </div>
@@ -28,7 +28,7 @@ export const Product = ({ product, showAs, qty }) => {
         </div>
         <div className="content">
           <h3>{product.marca}</h3>
-          <div className="amount">{parseCurrency(product.price)}</div>
+          {/* <div className="amount">{parseCurrency(product.price)}</div> */}
           <div className="qty">Cantidad: {product.qty}</div>
         </div>
       </div>

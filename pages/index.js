@@ -99,11 +99,7 @@ export default function Home({ products, consejos }) {
                 setFilters((filters) => ({ ...filters, edad: filter }))
               }
             />
-            <FilterPrice
-              onChange={(filter) =>
-                setFilters((filters) => ({ ...filters, price: filter }))
-              }
-            />
+
             <div>
               <FilterBrand
                 onChange={(filter) =>
