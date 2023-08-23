@@ -67,6 +67,7 @@ const Consejos = ({ consejos }) => {
               width: "80%",
               height: "70%",
               margin: "auto",
+              overflow: "hidden",
             },
           }}
           isOpen={show}
