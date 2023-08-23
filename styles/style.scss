@@ -289,7 +289,6 @@ section {
 
     .btn-home {
       margin-right: 0px;
-      margin-left: 7rem;
     }
   }
 }
@@ -654,6 +653,22 @@ section {
       padding: 0.5rem;
       cursor: pointer;
     }
+  }
+
+  .image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain; /* Ajusta a 'cover' si prefieres que cubra el área */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
   }
 }
 

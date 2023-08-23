@@ -76,14 +76,17 @@ const Consejos = ({ consejos }) => {
             <div className="buttonContainer">
               <button onClick={() => setShow(false)}>X</button>
             </div>
-            <img
-              src={
-                isMobile
-                  ? selectedConsejo.imageXLMobile
-                  : selectedConsejo.imageXL
-              }
-              alt={selectedConsejo.title}
-            />
+            <div className="image-container">
+              <img
+                className="background-image"
+                src={
+                  isMobile
+                    ? selectedConsejo.imageXLMobile
+                    : selectedConsejo.imageXL
+                }
+                alt={selectedConsejo.title}
+              />
+            </div>
           </div>
         </Modal>
       )}
