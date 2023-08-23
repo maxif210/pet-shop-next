@@ -284,7 +284,6 @@ section {
   }
 
   @media (max-width: 500px) {
-    margin-top: 4rem;
     background: url(../public/image/BIENVENIDA-MOVIL.png) no-repeat;
     background-size: cover;
 
@@ -1040,10 +1039,6 @@ section {
     font-size: 55%;
   }
 
-  .header {
-    padding: 2rem;
-  }
-
   section {
     padding: 5rem 2rem;
   }
@@ -1101,6 +1096,10 @@ section {
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+
+  .header {
+    width: 425px;
   }
 
   .header .login-form {
