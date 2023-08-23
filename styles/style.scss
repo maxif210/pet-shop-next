@@ -640,15 +640,8 @@ section {
   align-items: center;
   align-items: center;
   overflow: hidden;
-  height: 90%;
+  height: 85%;
   margin: 10px 0;
-
-  @media (max-width: 475px) {
-    .modal-content {
-      height: 60%;
-      margin: 80px 0;
-    }
-  }
 
   .buttonContainer {
     width: 100%;
@@ -663,6 +656,13 @@ section {
       border-radius: 7px;
       padding: 0.5rem;
       cursor: pointer;
+    }
+  }
+
+  @media (min-width: 475px) {
+    .modal-content {
+      height: 50%;
+      margin: 80px 0;
     }
   }
 
