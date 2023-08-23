@@ -13,7 +13,7 @@
   transition: 0.2s linear;
 }
 
-$carrot-color: #e67e22;
+$carrot-color: #f7931e;
 $black: #652e9f;
 $white: #fff;
 $light-color: #666;
@@ -251,46 +251,46 @@ section {
 }
 
 .home {
-  min-height: 100vh;
+  min-height: 120vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: url(../public/image/home_bg_img.webp) no-repeat;
+  background: url(../public/image/banner-bienvenida-pc.png) no-repeat;
   background-position: center;
-  background-size: cover;
   position: relative;
 
-  .content {
-    width: 50rem;
-
-    h3 {
-      font-size: 6rem;
-      color: $white;
-      padding-bottom: 1rem;
-    }
-
-    .btn-home {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.8rem 2.8rem;
-      border-radius: 5rem;
-      border-top-left-radius: 0;
-      border: 0.2rem solid white;
-      background: none;
-      color: white;
-      font-size: 1.7rem;
-      overflow: hidden;
-      z-index: 0;
-      position: relative;
-    }
+  .btn-home {
+    display: inline-block;
+    width: 330px;
+    margin-top: 11rem;
+    margin-right: 15px;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border-top-left-radius: 0;
+    border: 0.2rem solid #f7931e;
+    background: #f7931e;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    z-index: 0;
+    position: relative;
+    box-shadow: -4px 16px 1px #4d37ca;
   }
 
-  .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 12rem;
+  .btn-home:hover {
+    background: #e28a25;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 4rem;
+    background: url(../public/image/BIENVENIDA-MOVIL.png) no-repeat;
+
+    .btn-home {
+      margin-right: 0px;
+      margin-left: 7rem;
+    }
   }
 }
 
@@ -605,6 +605,10 @@ section {
       border-radius: 0.5rem;
     }
 
+    img {
+      border-radius: 7px;
+    }
+
     i {
       height: 6.5rem;
       width: 6.5rem;
@@ -627,6 +631,28 @@ section {
 @media (max-width: 1440px) {
   .services .products {
     @include grid(40rem);
+  }
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      font-weight: bold;
+      color: white;
+      margin-bottom: 0.5rem;
+      background-color: #f7931e;
+      border-radius: 7px;
+      padding: 0.5rem;
+    }
   }
 }
 
@@ -832,6 +858,25 @@ section {
   }
 }
 
+.shoppingCart {
+  /* Agrega estilos para personalizar la barra de desplazamiento */
+  scrollbar-width: thin;
+  scrollbar-color: #333 #ccc;
+}
+
+.shoppingCart::-webkit-scrollbar {
+  width: 8px;
+}
+
+.shoppingCart::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+.shoppingCart::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 20px;
+}
+
 .total {
   font-weight: bolder;
   font-size: 2.5rem;
@@ -895,6 +940,20 @@ section {
 
   .qty {
     font-size: 2rem;
+  }
+
+  .delete {
+    color: red;
+    border: 1px solid red;
+    background-color: transparent;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: red;
+      color: white;
+    }
   }
 }
 

@@ -9,15 +9,19 @@ export default function ShoppingCart() {
     cart.closeCart();
   }
 
-  function getTotal() {
-    console.log(cart);
-    const total = cart.items.reduce(
-      (acc, item) => acc + item.qty * item.price,
-      0
-    );
-
-    return total;
+  function handleRemove(item) {
+    cart.removeItem(item);
   }
+
+  // function getTotal() {
+  //   console.log(cart);
+  //   const total = cart.items.reduce(
+  //     (acc, item) => acc + item.qty * item.price,
+  //     0
+  //   );
+
+  //   return total;
+  // }
 
   return (
     <div
@@ -57,6 +61,7 @@ export default function ShoppingCart() {
                   product={item}
                   showAs="item"
                   qty={item.qty}
+                  onRemove={() => handleRemove(item)}
                 />
               ))}
           </div>

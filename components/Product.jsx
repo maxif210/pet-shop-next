@@ -2,7 +2,7 @@ import React from "react";
 import { parseCurrency } from "../helpers/parseCurrency";
 import { ProductButton } from "./ProductButton";
 
-export const Product = ({ product, showAs, qty }) => {
+export const Product = ({ product, showAs, qty, onRemove }) => {
   if (showAs === "card") {
     return (
       <div className="box" key={product.id}>
@@ -30,6 +30,11 @@ export const Product = ({ product, showAs, qty }) => {
           <h3>{product.marca}</h3>
           {/* <div className="amount">{parseCurrency(product.price)}</div> */}
           <div className="qty">Cantidad: {product.qty}</div>
+          {onRemove && (
+            <button className="delete" onClick={() => onRemove(product)}>
+              Eliminar
+            </button>
+          )}
         </div>
       </div>
     );
