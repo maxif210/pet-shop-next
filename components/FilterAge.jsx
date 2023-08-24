@@ -30,7 +30,7 @@ const FilterAge = ({ onChange }) => {
             value="Joven"
             onChange={(e) => handleChange(e.target.value, e.target.checked)}
           />
-          <span>joven</span>
+          <span>Cachorro</span>
         </div>
       </div>
     </div>
