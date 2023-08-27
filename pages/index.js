@@ -73,7 +73,7 @@ export default function Home({ products, consejos }) {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <>
+    <div className="content">
       <HeadMeta />
 
       <Header />
@@ -140,7 +140,7 @@ export default function Home({ products, consejos }) {
 
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

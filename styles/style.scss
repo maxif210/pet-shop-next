@@ -68,8 +68,8 @@ html {
   }
 }
 
-section {
-  padding: 3rem 8%;
+.content {
+  width: 100%;
 }
 
 .heading {
@@ -286,6 +286,7 @@ section {
   @media (max-width: 500px) {
     background: url(../public/image/BIENVENIDA-MOVIL.png) no-repeat;
     background-size: cover;
+    min-height: 165vh;
 
     .btn-home {
       margin-right: 0px;
@@ -310,6 +311,8 @@ section {
 
   .content {
     flex: 1 1 0rem;
+    justify-content: center;
+    display: flex;
 
     h3 {
       color: $black;
@@ -1055,9 +1058,6 @@ section {
   }
 
   .home {
-    justify-content: center;
-    background-position: right;
-
     .content {
       text-align: center;
       padding-bottom: 5rem;
@@ -1110,7 +1110,7 @@ section {
   }
 
   .header {
-    width: 425px;
+    width: 90%;
   }
 
   .header .login-form {
