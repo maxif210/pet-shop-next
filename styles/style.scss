@@ -70,6 +70,10 @@ html {
 
 .content {
   width: 100%;
+
+  @media (max-width: 375px) {
+    width: 108%;
+  }
 }
 
 .heading {
@@ -295,7 +299,7 @@ html {
     min-height: 165vh;
 
     .btn-home {
-      margin-right: 0px;
+      margin-right: 18px;
     }
   }
 }
