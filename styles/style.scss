@@ -255,21 +255,26 @@ html {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: url(../public/image/banner-bienvenida-pc.png) no-repeat;
-  background-position: center;
+  // background: url(../public/image/banner-bienvenida-pc.png) no-repeat;
+  // background-position: center;
   position: relative;
   margin-bottom: 4rem;
 
-  .content {
+  .button-container {
+    width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+  }
+
+  .content {
+    img {
+      width: 100%;
+    }
   }
 
   .btn-home {
-    display: inline-block;
-    width: 330px;
     margin-top: 11rem;
-    margin-right: 15rem;
+    margin-right: 22rem;
     padding: 1rem 2rem;
     border-radius: 2rem;
     border-top-left-radius: 0;
@@ -280,23 +285,14 @@ html {
     text-align: center;
     overflow: hidden;
     font-weight: bold;
-    z-index: 0;
-    position: relative;
+    z-index: 10;
+    position: absolute;
+    top: 300px;
     box-shadow: -4px 16px 1px #4d37ca;
   }
 
   .btn-home:hover {
     background: #e28a25;
-  }
-
-  @media (max-width: 500px) {
-    background: url(../public/image/BIENVENIDA-MOVIL.png) no-repeat;
-    background-size: cover;
-    min-height: 165vh;
-
-    .btn-home {
-      margin-right: 18px;
-    }
   }
 }
 
@@ -1055,26 +1051,6 @@ html {
 
 // media queries
 
-@media (max-width: 991px) {
-  html {
-    font-size: 55%;
-  }
-
-  section {
-    padding: 5rem 2rem;
-  }
-
-  .home {
-    .content {
-      text-align: center;
-      padding-bottom: 5rem;
-
-      h3 {
-        font-size: 4.5rem;
-      }
-    }
-  }
-}
 .hero-logo {
   width: 250px;
   filter: drop-shadow(0px 0px 16px white);
@@ -1109,6 +1085,13 @@ html {
   .shopContainer {
     flex-direction: column;
   }
+
+  .home .btn-home {
+    margin-right: 12rem;
+    position: absolute;
+    top: 225px;
+    right: -15px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1117,7 +1100,7 @@ html {
   }
 
   .header {
-    width: 90%;
+    width: 100%;
   }
 
   .header .login-form {
@@ -1126,6 +1109,12 @@ html {
 
   .shopcontainer {
     flex-direction: column;
+  }
+
+  .home .btn-home {
+    position: absolute;
+    top: 350px;
+    right: 22px;
   }
 }
 
